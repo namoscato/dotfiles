@@ -16,7 +16,7 @@
     ca = !git add -A && git commit -av
 
     # Switch to a branch, creating it if necessary
-    go = "!f() { git checkout -b \"$1\" 2> /dev/null || git checkout \"$1\"; }; f"
+    go = "!f() { git checkout \"$1\" || git checkout -b \"$1\"; }; f"
 
     # Show verbose output about tags, branches or remotes
     tags = tag -l
@@ -26,6 +26,21 @@
     # Remove branches that have already been merged with master
     # a.k.a. ‘delete merged’
     dm = "!git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d"
+
+    # Downloads objects and refs that exist in `origin`
+    fo = fetch origin
+
+    # Print the latest release tag
+    rel = !git fo && git describe --tags $(git rev-list --tags --max-count=1)
+
+    # Print the latest `.x` lineage branch name
+    dotx = !git fo && echo $(git rel | grep -E -o ^[0-9]+\\.[0-9]+).x
+
+    # Checkout the latest `.x` and reset to the upstream state
+    latest = !git fo && git co $(git dotx) && git reset --hard origin/$(git dotx)
+
+    # Merge the latest `.x` into your current branch
+    update = !git fo && git merge origin/$(git dotx)
 
 [color]
 

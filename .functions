@@ -35,15 +35,11 @@ function o() {
 
 # TODO consider moving to git aliases
 
-function :fetch () {
-    git fetch origin
-}
-
-function :push () {
+function :push() {
     git push origin $(git rev-parse --abbrev-ref HEAD)
 }
 
-function :pull () {
+function :pull() {
     if [ -z "$1" ] ; then
         git pull origin $(git rev-parse --abbrev-ref HEAD)
     else
