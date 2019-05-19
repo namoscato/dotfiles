@@ -11,7 +11,7 @@ source bootstrap.sh
 When setting up a new Mac:
 
 ```bash
-./.macos
+./scripts/macos.sh
 ```
 
 ### Extra

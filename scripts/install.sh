@@ -10,3 +10,6 @@ brew upgrade
 
 # Install GnuPG to enable PGP-signing commits.
 brew install gnupg
+
+# Install Node utilities
+npm i -g npm-check-updates gulp-cli karma-cli
