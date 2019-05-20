@@ -11,5 +11,8 @@ brew upgrade
 # Install GnuPG to enable PGP-signing commits.
 brew install gnupg
 
+# Install hub, making git easier to use with GitHub
+brew install hub
+
 # Install Node utilities
 npm i -g npm-check-updates gulp-cli karma-cli
