@@ -15,8 +15,11 @@
     # Commit all changes
     ca = !git add -A && git commit -av
 
-    # Switch to a branch, creating it if necessary
-    go = "!f() { git checkout \"$1\" || git checkout -b \"$1\"; }; f"
+    # Switch to a branch
+    co = checkout
+
+    # Checkout new branch
+    cob = checkout -b
 
     # Show verbose output about tags, branches or remotes
     tags = tag -l
@@ -41,6 +44,9 @@
 
     # Merge the latest `.x` into your current branch
     update = !git fo && git merge origin/$(git dotx)
+
+    # List aliases
+    la = "!git config -l | grep alias | cut -c 7-"
 
 [color]
 

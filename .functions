@@ -32,9 +32,6 @@ function o() {
     fi;
 }
 
-
-# TODO consider moving to git aliases
-
 function :push() {
     git push origin $(git rev-parse --abbrev-ref HEAD)
 }
