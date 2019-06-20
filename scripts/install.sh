@@ -16,3 +16,6 @@ brew install hub
 
 # Install Node utilities
 npm i -g npm-check-updates gulp-cli karma-cli
+
+# Install SDKMAN: https://sdkman.io/install
+curl -s "https://get.sdkman.io" | bash
