@@ -59,6 +59,9 @@ defaults write com.apple.screencapture location -string "${HOME}/Desktop"
 # Save screenshots in PNG format (other options: BMP, GIF, JPG, PDF, TIFF)
 defaults write com.apple.screencapture type -string "png"
 
+# Disable slow, floating screenshot thumbnail feature
+defaults write com.apple.screencapture show-thumbnail -bool FALSE
+
 # Hot corners
 # Possible values:
 #  0: no-op
