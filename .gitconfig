@@ -45,6 +45,9 @@
     # Merge the latest `.x` into your current branch
     update = !git fo && git merge origin/$(git dotx)
 
+    # List current stash entries
+    sl = !"git stash list --pretty=format:\"%C(yellow)%gd %C(dim)(%h)%C(reset) %C(blue)%cd %C(dim)(%cr)%C(reset) %s\""
+
     # List aliases
     la = "!git config -l | grep alias | cut -c 7-"
 
