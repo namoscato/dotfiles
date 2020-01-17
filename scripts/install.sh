@@ -14,6 +14,9 @@ brew install gnupg
 # Install hub, making git easier to use with GitHub
 brew install hub
 
+# Install watch
+brew install watch
+
 # Install Node utilities
 npm i -g npm-check-updates gulp-cli karma-cli
 
