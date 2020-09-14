@@ -28,3 +28,6 @@ export GPG_TTY=$(tty);
 
 # Set Node Version Manager directory
 export NVM_DIR="$HOME/.nvm"
+
+# Hide ‘default interactive shell is now zsh’
+export BASH_SILENCE_DEPRECATION_WARNING=1
