@@ -17,8 +17,11 @@ brew install hub
 # Install watch
 brew install watch
 
+# Install Yarn
+brew install yarn
+
 # Install Node utilities
-npm i -g npm-check-updates gulp-cli karma-cli
+npm i -g npm-check-updates
 
 # Install SDKMAN: https://sdkman.io/install
 curl -s "https://get.sdkman.io" | bash
