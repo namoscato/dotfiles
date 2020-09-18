@@ -1,0 +1,10 @@
+#!/bin/bash
+
+MESSAGE_FILE=$1
+
+STORY_PARTS=($(git symbolic-ref --short HEAD | grep -Eo '^(\w+/)?[[:alpha:]]+[-_]?[0-9]+' | grep -Eo '[[:alpha:]]+[-_]?[0-9]+' | grep -Eo '[[:alpha:]]+|[0-9]+'))
+STORY_PREFIX=$(printf "%s-%s" "${STORY_PARTS[0]}" "${STORY_PARTS[1]}")
+
+if ! [[ "${#STORY_PARTS[@]}" -eq 0 ]] && [[ $(grep -c "$STORY_PREFIX" "$MESSAGE_FILE") -eq 0 ]]; then
+  sed -i.bak -e "1s/^/\[$STORY_PREFIX\] /" $MESSAGE_FILE
+fi
